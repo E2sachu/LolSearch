@@ -1,0 +1,45 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}ProjetLolSearchBundle:Lieux:ajouterLieux{% endblock %}
+
+{% block body %}
+<div class="col-md-3">
+{{ form_start(form) }}
+{{ form_errors(form) }}
+
+{{ form_label(form.Nom,'Nom de l\'etablissement')}}
+{{ form_errors(form.Nom)}}
+{{ form_widget(form.Nom)}}
+<div class="separeBot"></div>
+
+{{ form_label(form.Adresse,'Adresse de l\'etablissement')}}
+{{ form_errors(form.Adresse)}}
+{{ form_widget(form.Adresse)}}
+<div class="separeBot"></div>
+
+{{ form_label(form.Site,'Site internet')}}
+{{ form_errors(form.Site)}}
+{{ form_widget(form.Site)}}
+<div class="separeBot"></div>
+
+{{ form_label(form.Horaire,'Horaire d\'ouverture')}}
+{{ form_errors(form.Horaire)}}
+{{ form_widget(form.Horaire)}}
+<div class="separeBot"></div>
+
+{{ form_label(form.Numero,'Numero de telephone')}}
+{{ form_errors(form.Numero)}}
+{{ form_widget(form.Numero)}}
+<div class="separeBot"></div>
+
+{{ form_label(form.Description,'Informations supplementaire')}}
+{{ form_errors(form.Description)}}
+{{ form_widget(form.Description)}}
+<div class="separeBot"></div>
+
+
+<div class="separeBot"></div>
+
+<button type="submit" class='btn btn-primary'>Ajouter</button></div>
+{{ form_end(form) }}
+{% endblock %}

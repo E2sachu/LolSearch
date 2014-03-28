@@ -1,0 +1,283 @@
+<?php
+
+namespace Projet\LolSearchBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * User
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class User
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="login", type="string", length=30)
+     */
+    private $login;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mdp", type="string", length=30)
+     */
+    private $mdp;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pseudo", type="string", length=50)
+     */
+    private $pseudo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rang", type="string", length=50)
+     */
+    private $rang;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="normal_3", type="boolean",nullable=true)
+     */
+    private $normal3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="normal_5", type="boolean",nullable=true)
+     */
+    private $normal5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ranked_3", type="boolean",nullable=true)
+     */
+    private $ranked3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ranked_5", type="boolean",nullable=true)
+     */
+    private $ranked5;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set login
+     *
+     * @param string $login
+     * @return User
+     */
+    public function setLogin($login)
+    {
+        $this->login = $login;
+
+        return $this;
+    }
+
+    /**
+     * Get login
+     *
+     * @return string 
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    /**
+     * Set mdp
+     *
+     * @param string $mdp
+     * @return User
+     */
+    public function setMdp($mdp)
+    {
+        $this->mdp = $mdp;
+
+        return $this;
+    }
+
+    /**
+     * Get mdp
+     *
+     * @return string 
+     */
+    public function getMdp()
+    {
+        return $this->mdp;
+    }
+
+    /**
+     * Set pseudo
+     *
+     * @param string $pseudo
+     * @return User
+     */
+    public function setPseudo($pseudo)
+    {
+        $this->pseudo = $pseudo;
+
+        return $this;
+    }
+
+    /**
+     * Get pseudo
+     *
+     * @return string 
+     */
+    public function getPseudo()
+    {
+        return $this->pseudo;
+    }
+
+    /**
+     * Set rang
+     *
+     * @param string $rang
+     * @return User
+     */
+    public function setRang($rang)
+    {
+        $this->rang = $rang;
+
+        return $this;
+    }
+
+    /**
+     * Get rang
+     *
+     * @return string 
+     */
+    public function getRang()
+    {
+        return $this->rang;
+    }
+
+    /**
+     * Set normal3
+     *
+     * @param boolean $normal3
+     * @return User
+     */
+    public function setNormal3($normal3)
+    {
+        $this->normal3 = $normal3;
+
+        return $this;
+    }
+
+    /**
+     * Get normal3
+     *
+     * @return boolean 
+     */
+    public function getNormal3()
+    {
+        return $this->normal3;
+    }
+
+    /**
+     * Set normal5
+     *
+     * @param boolean $normal5
+     * @return User
+     */
+    public function setNormal5($normal5)
+    {
+        $this->normal5 = $normal5;
+
+        return $this;
+    }
+
+    /**
+     * Get normal5
+     *
+     * @return boolean 
+     */
+    public function getNormal5()
+    {
+        return $this->normal5;
+    }
+
+    /**
+     * Set ranked3
+     *
+     * @param boolean $ranked3
+     * @return User
+     */
+    public function setRanked3($ranked3)
+    {
+        $this->ranked3 = $ranked3;
+
+        return $this;
+    }
+
+    /**
+     * Get ranked3
+     *
+     * @return boolean 
+     */
+    public function getRanked3()
+    {
+        return $this->ranked3;
+    }
+
+    /**
+     * Set ranked5
+     *
+     * @param boolean $ranked5
+     * @return User
+     */
+    public function setRanked5($ranked5)
+    {
+        $this->ranked5 = $ranked5;
+
+        return $this;
+    }
+
+    /**
+     * Get ranked5
+     *
+     * @return boolean 
+     */
+    public function getRanked5()
+    {
+        return $this->ranked5;
+    }
+	
+	public function __construct()
+	{
+		$this->rang = "unranked";
+		$this->normal3 = false;
+		$this->normal5 = false;
+		$this->ranked3 = false;
+		$this->ranked5 = false;
+	}
+}

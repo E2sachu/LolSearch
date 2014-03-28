@@ -1,0 +1,5 @@
+projet_lol_search:
+    resource: "@ProjetLolSearchBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

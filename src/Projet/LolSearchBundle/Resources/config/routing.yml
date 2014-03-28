@@ -1,0 +1,57 @@
+lolsearch_home:
+    pattern:  /home
+    defaults: { _controller: ProjetLolSearchBundle:Default:index }
+
+lolsearch_contact:
+    pattern: /contact
+    defaults: { _controller: ProjetLolSearchBundle:Default:contact }
+
+lolsearch_inscription:
+    pattern: /inscription/utilisateur
+    defaults: {_controller: ProjetLolSearchBundle:Inscription:registerUser}
+
+lolsearch_lieux:
+    pattern : /inscription/lieux
+    defaults: {_controller: ProjetLolSearchBundle:Inscription:registerLieux}
+
+lolsearch_event:
+    pattern : /inscription/event
+    defaults: {_controller: ProjetLolSearchBundle:Inscription:registerEvent}
+
+login_check:
+    pattern: /login_check
+
+logout:
+    pattern: /logout
+
+lolsearch_recherche:
+    pattern: /recherche
+    defaults: { _controller: ProjetLolSearchBundle:Joueur:recherche }
+
+lolsearch_profil:
+    pattern: /profil
+    defaults: { _controller: ProjetLolSearchBundle:Profil:showProfil }
+
+lolsearch_ajouterLieux:
+    pattern: /ajouterLieux
+    defaults: { _controller: ProjetLolSearchBundle:Lieux:rechercheLieux }
+
+lolsearch_rechercherLieux:
+    pattern: /rechercherLieux
+    defaults: { _controller: ProjetLolSearchBundle:Lieux:rechercherLieux }
+
+lolsearch_ajouterEvent:
+    pattern: /ajouterEvent
+    defaults: { _controller: ProjetLolSearchBundle:Event:ajouterEvent} 
+
+lolsearch_rechercherEvent:
+    pattern: /rechercherEvent
+    defaults: { _controller: ProjetLolSearchBundle:Event:rechercherEvent}
+
+lolsearch_voirEvent:
+    pattern: /voirEvent
+    defaults: { _controller: ProjetLolSearchBundle:Event:voirEvent}
+
+lolsearch_fiche:
+    pattern: /fiche/{id}
+    defaults: { _controller: ProjetLolSearchBundle:Joueur:fiche }

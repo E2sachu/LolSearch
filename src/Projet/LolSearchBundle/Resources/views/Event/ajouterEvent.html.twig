@@ -1,0 +1,64 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}ProjetLolSearchBundle:Event:ajouterEvent{% endblock %}
+
+{% block body %}
+<div class="col-md-3">
+{{ form_start(form) }}
+{{ form_errors(form) }}
+
+{{ form_label(form.Nom,'Nom de l\'evenement')}}
+{{ form_errors(form.Nom)}}
+{{ form_widget(form.Nom)}}
+<div class="separeBot"></div>
+
+{{ form_label(form.Lieux,'Lieu de l\'evenement')}}
+{{ form_errors(form.Lieux)}}
+{{ form_widget(form.Lieux)}}
+<div class="separeBot"></div>
+
+{{ form_label(form.Adresse,'Adresse de L\'evenement')}}
+{{ form_errors(form.Adresse)}}
+{{ form_widget(form.Adresse)}}
+<div class="separeBot"></div>
+
+<div classe="form-inline"> 
+{{ form_label(form.Mail,'Mail organisateur')}}
+{{ form_errors(form.Mail)}}
+{{ form_widget(form.Mail)}}
+<div class="separeBot"></div>
+
+
+{{ form_label(form.debutEvent,'Heure de debut')}}
+{{ form_errors(form.debutEvent)}}
+{{ form_widget(form.debutEvent)}}
+<div class="separeBot"></div>
+
+{{ form_label(form.finEvent,'Heure de fin')}}
+{{ form_errors(form.finEvent)}}
+{{ form_widget(form.finEvent)}}
+<div class="separeBot"></div>
+
+<div class="input" type="radio">
+{{ form_label(form.Payant,'Evenement payant')}}
+{{ form_errors(form.Payant)}}
+{{ form_widget(form.Payant)}}
+<div class="separeBot"></div>
+</div>
+
+{{ form_label(form.Description,'Informations supplementaire')}}
+{{ form_errors(form.Description)}}
+{{ form_widget(form.Description)}}
+<div class="separeBot"></div>
+
+
+<div class="separeBot"></div>
+
+<button type="submit" class='btn btn-primary'>Ajouter</button></div>
+{{ form_end(form) }}
+ <script>
+      $(function() {
+        $("#form_debutEvent").Datepicker();
+      });
+    </script>
+{% endblock %}

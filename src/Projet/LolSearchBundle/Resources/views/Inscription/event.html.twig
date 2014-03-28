@@ -1,0 +1,67 @@
+{% extends '::base.html.twig' %}
+
+
+{% block title %} {{ parent() }} - Bienvenue !{% endblock %}
+
+{% block body %}
+
+	{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+		<div>
+			{{ form_label(form.nom,'Nom de l\'Event :') }}
+			{{ form_errors(form.nom) }}
+			{{ form_widget(form.nom) }}
+		</div>
+
+		<div>
+			{{ form_label(form.lieux, 'Lieux de l\'Event :') }}
+			{{ form_errors(form.lieux) }}
+			{{ form_widget(form.lieux) }}
+		</div>
+		
+		<div>
+			{{ form_label(form.adresse, 'Adresse de l\'Event : ') }}
+			{{ form_errors(form.adresse) }}
+			{{ form_widget(form.adresse) }}
+		</div>
+		
+		<div>
+			{{ form_label(form.mail, 'Mail organisation : ') }}
+			{{ form_errors(form.mail) }}
+			{{ form_widget(form.mail) }}
+		</div>
+		
+		
+		
+		<div>
+			{{ form_label(form.debutEvent, 'Heure commencement') }}
+			{{ form_errors(form.debutEvent) }}
+			{{ form_widget(form.debutEvent) }}
+		</div>
+		
+		<div>
+			{{ form_label(form.finEvent,'Heure de Fin') }}
+			{{ form_errors(form.finEvent) }}
+			{{ form_widget(form.finEvent) }}
+		</div>
+		
+		<div>
+			{{ form_label(form.payant,'Event Payant : ') }}
+			{{ form_errors(form.payant) }}
+			{{ form_widget(form.payant) }}
+		</div>
+		
+		<div>
+			{{ form_label(form.description,'Quelque mots sur l\'Event') }}
+			{{ form_errors(form.description) }}
+			{{ form_widget(form.description) }}
+		</div>
+
+		<input type="submit" />
+
+	{{ form_end(form) }}
+
+
+
+{% endblock %}

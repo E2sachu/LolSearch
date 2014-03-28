@@ -1,0 +1,25 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}ProjetLolSearchBundle:Profil:showProfil{% endblock %}
+
+{% block body %}
+<h1>{{app.user.pseudo}}'s Profil</h1>
+	
+	{{dump(app.user)}}
+
+	<p>{{ app.user.pseudo }} - {{ app.user.rang }}</p>
+	<p>Vous recherchez des partenaires pour : </p>
+	{% if app.user.normal3 == true %}
+		<p>Normal 3x3</p>
+	{% endif %}
+	{% if app.user.normal5 == true %}
+		<p>Normal 5x5</p>
+	{% endif %}
+	{% if app.user.ranked3 == true %}
+		<p>Ranked 3x3</p>
+	{% endif %}
+	{% if app.user.ranked5 == true %}
+		<p>Ranked 5x5</p>
+	{% endif %}
+
+{% endblock %}

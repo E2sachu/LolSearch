@@ -1,0 +1,26 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}ProjetLolSearchBundle:Lieux:rechercherLieux{% endblock %}
+
+{% block body %}
+<div class="col-md-3">
+{{ form_start(form) }}
+{{ form_errors(form) }}
+{{ form_label(form.Nom)}}
+{{ form_errors(form.Nom)}}
+{{ form_widget(form.Nom)}}
+
+<div class="separeBot"></div>
+
+<button type="submit" class='btn btn-primary'>Rechercher</button></div>
+{{ form_end(form) }}
+<div class='col-md-6 col-md-offset-1'>
+{% if recherche is not empty %}
+	{% for lieu in recherche %}
+
+		<li>{{ lieu.nom }} - {{lieu.adresse}}</li>
+
+	
+	{% endfor %}	
+{% endif %}</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends '::base.html.twig' %}
+
+
+{% block title %} {{ parent() }} - Bienvenue !{% endblock %}
+
+{% block body %}
+
+	{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+		<div>
+			{{ form_label(form.login,'Votre Login : ') }}
+			{{ form_errors(form.login) }}
+			{{ form_widget(form.login) }}
+		</div>
+
+		<div>
+			{{ form_label(form.mdp, 'Votre Mot de Passe : ') }}
+			{{ form_errors(form.mdp) }}
+			{{ form_widget(form.mdp) }}
+		</div>
+		
+		<div>
+			{{ form_label(form.pseudo, 'Votre pseudo : ') }}
+			{{ form_errors(form.pseudo) }}
+			{{ form_widget(form.pseudo) }}
+		</div>
+		
+		<div>
+			{{ form_label(form.rang, 'Votre Classement SoloQ : ') }}
+			{{ form_errors(form.rang) }}
+			{{ form_widget(form.rang) }}
+		</div>
+		
+		<div>
+			<p>Vous rechercher de la :</p>
+		</div>
+		
+		<div>
+			{{ form_label(form.normal3, 'Normal 3x3') }}
+			{{ form_errors(form.normal3) }}
+			{{ form_widget(form.normal3) }}
+		</div>
+		
+		<div>
+			{{ form_label(form.normal5, 'Normal 5x5') }}
+			{{ form_errors(form.normal5) }}
+			{{ form_widget(form.normal5) }}
+		</div>
+		
+		<div>
+			{{ form_label(form.ranked3,'Match class&eacute; par équipe 3x3') }}
+			{{ form_errors(form.ranked3) }}
+			{{ form_widget(form.ranked3) }}
+		</div>
+		
+		<div>
+			{{ form_label(form.ranked5,'Match classé par équipe 5x5') }}
+			{{ form_errors(form.ranked5) }}
+			{{ form_widget(form.ranked5) }}
+		</div>
+
+		<input type="submit" />
+
+	{{ form_end(form) }}
+
+
+
+{% endblock %}

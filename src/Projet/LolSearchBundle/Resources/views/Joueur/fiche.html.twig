@@ -1,0 +1,23 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}ProjetLolSearchBundle:Joueur:ficheJoueur{% endblock %}
+
+{% block body %}
+
+<div class='col-md-2 col-md-offset-5 table-responsive'>
+	<table class ="table table-bordered">
+	<thead>
+	<tr>
+	<th> pseudo </th>
+	<th> rang </th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td>{{ ficheJoueur.pseudo }}</td>
+	<td>{{ ficheJoueur.rang}}</td>
+	</tr>
+	</tbody>
+	</table>
+</div>
+{% endblock %}

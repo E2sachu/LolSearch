@@ -1,0 +1,30 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}ProjetLolSearchBundle:Joueur:rechercheJoueur{% endblock %}
+
+{% block body %}
+<div class="col-md-3">
+{{ form_start(form) }}
+{{ form_errors(form) }}
+{{ form_label(form.Pseudo)}}
+{{ form_errors(form.Pseudo)}}
+{{ form_widget(form.Pseudo)}}
+
+{{ form_label(form.Classement)}}
+{{ form_errors(form.Classement)}}
+{{ form_widget(form.Classement)}}
+
+<div class="separeBot"></div>
+
+<button type="submit" class='btn btn-primary'>Rechercher</button></div>
+{{ form_end(form) }}
+<div class='col-md-6 col-md-offset-1'>
+{% if recherche is not empty %}
+	{% for player in recherche %}
+
+		<li><a href="{{path('lolsearch_fiche', {'id':player.id} )}}">{{ player.pseudo }}</a> - {{player.rang}}</li>
+
+	
+	{% endfor %}	
+{% endif %}</div>
+{% endblock %}

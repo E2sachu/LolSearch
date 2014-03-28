@@ -1,0 +1,29 @@
+security:
+   firewalls:
+       dev:
+         pattern: ^/(_(profiler|wdt)|css|images|js)/
+         security: false
+       secured_area:
+           pattern: ^/
+           anonymous: ~
+           form_login:
+              login_path: /home
+              check_path: /login_check
+              default_target_path: /home
+           logout:
+              path: /logout
+              target: /home
+           security: true
+           anonymous: true
+
+   access_control:
+            - { path: ^/home, role: IS_AUTHENTICATED_ANONYMOUSLY }
+            - { path: ^/inscription, role: IS_AUTHENTICATED_ANONYMOUSLY }
+
+            - { path: ^/, role: ROLE_ADMIN }
+
+   providers:
+      main:
+          entity: { class: Projet\LolSearchBundle\Entity\User, property: login }
+   encoders:
+      Projet\LolSearchBundle\Entity\User: plaintext
